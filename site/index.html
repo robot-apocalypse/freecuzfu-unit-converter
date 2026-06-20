@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Unit Converter">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192.svg">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    :root {
+      --accent: #f59e0b;
+    }
+  </style>
+  <title>Unit Converter — FreeCuzFU</title>
+</head>
+<body>
+
+  <a href="https://freecuzfu.com" class="back-link">← FreeCuzFU</a>
+  <button id="install-btn" aria-label="Install app" hidden>↓ Install</button>
+
+  <main id="app">
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-cat="length" role="tab" aria-selected="true">Length</button>
+      <button class="tab" data-cat="weight" role="tab" aria-selected="false">Weight</button>
+      <button class="tab" data-cat="temperature" role="tab" aria-selected="false">Temp</button>
+      <button class="tab" data-cat="volume" role="tab" aria-selected="false">Volume</button>
+      <button class="tab" data-cat="baking" role="tab" aria-selected="false">Baking</button>
+    </nav>
+    <section class="converter">
+      <div id="ingredient-wrap" hidden>
+        <select id="ingredient"></select>
+        <p id="density-note">real ingredient densities, not guesses</p>
+        <div class="divider"></div>
+      </div>
+      <div class="row">
+        <input id="val-a" type="number" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <select id="unit-a"></select>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <input id="val-b" type="number" inputmode="decimal" autocomplete="off" spellcheck="false">
+        <select id="unit-b"></select>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

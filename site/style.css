@@ -1,0 +1,212 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.45);
+  --accent: #ff6b35;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  overflow: hidden;
+}
+
+.back-link {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+#install-btn {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0;
+  z-index: 10;
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#install-btn:hover {
+  color: var(--text);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.5rem 1.25rem 2rem;
+  min-height: 100%;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.25rem;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 0.25rem;
+  transition: color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab.active {
+  background: var(--accent);
+  color: #000;
+}
+
+.tab:not(.active):hover {
+  color: var(--text);
+}
+
+.converter {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 1.25rem;
+  gap: 0.75rem;
+}
+
+.row input[type="number"] {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 300;
+  min-width: 0;
+  outline: none;
+  -moz-appearance: textfield;
+  user-select: text;
+}
+
+.row input[type="number"]::-webkit-outer-spin-button,
+.row input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.row input[type="number"]:focus {
+  color: var(--accent);
+}
+
+.row select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 0.6rem;
+  outline: none;
+  flex-shrink: 0;
+  max-width: 7rem;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+  text-align: center;
+}
+
+.row select:focus {
+  border-color: var(--accent);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 1.25rem;
+}
+
+#ingredient-wrap {
+  padding: 0.85rem 1.25rem 0;
+}
+
+#ingredient {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  margin-bottom: 0.85rem;
+  transition: border-color 0.15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#ingredient:focus {
+  border-color: var(--accent);
+}
+
+#density-note {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+  text-align: center;
+  margin-bottom: 0.85rem;
+}
