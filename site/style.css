@@ -210,3 +210,21 @@ html, body {
   text-align: center;
   margin-bottom: 0.85rem;
 }
+
+.github-link {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.5rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.github-link:hover {
+  color: var(--text);
+}

@@ -1,4 +1,4 @@
-const CACHE = 'unit-converter-v1';
+const CACHE = 'unit-converter-v2';
 const ASSETS = ['/', '/style.css', '/app.js', '/manifest.json', '/icons/icon-192.svg', '/icons/icon-512.svg'];
 
 self.addEventListener('install', (e) => {
